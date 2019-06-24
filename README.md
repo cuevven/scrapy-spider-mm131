@@ -48,5 +48,5 @@ $ scrapy crawl mm131
 
 - [scrapy](https://github.com/scrapy/scrapy)
 - [fake-useragent](https://github.com/hellysmile/fake-useragent)
-- [教会我怎么写爬虫，并且代码基本源于此](http://www.scrapyd.cn)
+- [教会我怎么写爬虫，思路基本来源于此](http://www.scrapyd.cn)
 
