@@ -122,18 +122,19 @@ class RandomUserAgentMiddleware(object):
         # request.headers['accept'] = 'image/webp,image/*,*/*;q=0.8'
 
         # referer = 'https://www.mm131.net/xinggan/5013.html'
+        fake_id = str(random.randint(1000, 9999))
         channel = ['xinggan', 'qingchun', 'xiaohua', 'chemo', 'qipao', 'mingxing']
         base_url = 'https://www.mm131.net/' + random.choice(channel) + '/'
         referer = request.url
         referer_url = referer.split('/')
+        extensions = ['html']
         isImage = referer.split('.')[-1]
 
-        if isImage == 'jpg':
-            # referer = request.url
-            referer_url = str(referer_url[-2]) + '.html'
+        if isImage not in extensions:
+            # referer_url = str(referer_url[-2]) + '.html'
+            referer_url = fake_id + '.html'
             referer = base_url + referer_url
+            # print('Console Log: (' + fake_id + ')<' + referer + '>')
 
-        # print('url?', referer)
-        
         if referer:
             request.headers['referer'] = referer
