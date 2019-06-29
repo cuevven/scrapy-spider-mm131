@@ -1,0 +1,4 @@
+scrapy
+pymysql
+peewee
+fake-useragent

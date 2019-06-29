@@ -32,7 +32,18 @@ $ pip install scrapy
 $ pip install fake-useragent
 ```
 
-将脚本 clone 到本地，进入到脚本目录启动爬虫
+因为使用了 peewee 和 MySQL，确保这两个包已经安装
+
+```bash
+$ pip install pymysql
+$ pip install peewee
+```
+
+将脚本 clone 到本地，
+
+在 settings.py 中设置数据库相关信息，
+
+进入到脚本目录启动爬虫
 
 ```bash
 $ scrapy crawl mm131
@@ -48,4 +59,5 @@ $ scrapy crawl mm131
 
 - [scrapy](https://github.com/scrapy/scrapy)
 - [fake-useragent](https://github.com/hellysmile/fake-useragent)
+- [peewee](http://docs.peewee-orm.com)
 - [教会我怎么写爬虫，思路基本来源于此](http://www.scrapyd.cn)

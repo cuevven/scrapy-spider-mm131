@@ -18,6 +18,13 @@ SPIDER_MODULES = ['scrapymm131.spiders']
 NEWSPIDER_MODULE = 'scrapymm131.spiders'
 IMAGES_STORE = './images_origin'
 
+# MySql Settings
+MYSQL_DATABASE = 'mm131'
+MYSQL_HOST = '127.0.0.1'
+MYSQL_PORT = 33060
+MYSQL_USER = 'spider'
+MYSQL_PASSWORD = 'spider'
+
 # user-agent type. you can use 'random' or 'ie' or 'chrome' or 'firefox' 
 RANDOM_UA_TYPE = 'random'
 
@@ -74,6 +81,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+   'scrapymm131.pipelines.MySQLStorePipeline': 200,
    'scrapymm131.pipelines.Scrapymm131Pipeline': 300,
 }
 
